@@ -8,6 +8,7 @@ on:
   pull_request:
     branches:
       - develop
+
 permissions:
   contents: write
 
@@ -39,14 +40,14 @@ jobs:
       
       - name: Run tests with coverage
         run: |
-          python -m pytest --cov=myapp tests/ --cov-fail-under=70
+          python -m pytest --cov=myapp tests/ --cov-report=xml --cov-fail-under=70
 
       
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
-          path: .coverage
+          path: coverage.xml
         if: always() 
 
   
