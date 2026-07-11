@@ -8,6 +8,8 @@ on:
   pull_request:
     branches:
       - develop
+permissions:
+  contents: write
 
 jobs:
   
@@ -54,6 +56,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          
+          persist-credentials: true
 
       - name: Build Application Placeholder
         run: |
