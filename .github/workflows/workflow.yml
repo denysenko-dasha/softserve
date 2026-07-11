@@ -37,7 +37,7 @@ jobs:
       
       - name: Run tests with coverage
         run: |
-          pytest --cov=myapp tests/ --cov-fail-under=70
+          python -m pytest --cov=myapp tests/ --cov-fail-under=70
 
       
       - name: Upload coverage report
